@@ -15,17 +15,16 @@ void threshod_Mat(int th, void*data)
 
 int main()
 {
-	Mat greyMat;
 	int lowth = 30;
 	int maxth = 255;
 	//.........练习三.回调函数.....................//
-	Mat scrMat = imread("C:\\Users\\YangYF\\Desktop\\1.JPG");
-	if (!scrMat.data)
+	Mat greyMat = imread("C:\\Users\\YangYF\\Desktop\\1.JPG",0);
+	if (!greyMat.data)
 	{
 		cout << "图像载入失败！" << endl;
 		return 0;
 	}
-	cvtColor(scrMat, greyMat, CV_BGR2GRAY);
+	
 	imshow(window_name, greyMat);
 	createTrackbar("滑动条", 
 				     window_name,
